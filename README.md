@@ -1,5 +1,5 @@
-# .cls file of Hengyang Normal University exam template
-## based on exam template https://www.ctan.org/pkg/exam
+# The .cls file is for Hengyang Normal University exam template.
+## It is based on exam template on ctan: https://www.ctan.org/pkg/exam
 
 different types of questions continuous labeling
 
