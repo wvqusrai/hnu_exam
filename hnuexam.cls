@@ -32,9 +32,8 @@
 % 定义默认字体大小和行距
 \renewcommand{\normalsize}{\fontsize{12pt}{\baselineskip}\selectfont}
 
-% 试卷纸张设置
+% 试卷纸张设置，16开的纸（两页合成一个大页的方式）
 \geometry{paperheight=270mm,paperwidth=195mm} 
-
 
 % 设置首行缩进
 \setlength{\parindent}{0em}
@@ -88,7 +87,7 @@
 	\end{center}
 }
 
-% 大题计数器
+% 定义大题计数器并初始化为0
 \newcounter{dati}
 \setcounter{dati}{0}
 
@@ -116,7 +115,7 @@
 	\vspace{0.5em}%
 	\noindent\begin{tabular}{|c|c|c}
 		\cline{1-2}
-		得分 & 评阅人 & \multirow{2}{*}{\zhnum{dati}、#1({共~#2~小题，共#2分})} \\
+		得分 & 评阅人 & \multirow{2}{*}{\zhnum{dati}、#1({共~#2~小题，共#3分})} \\
 		\cline{1-2}
 		& & \\
 		\cline{1-2}
@@ -141,7 +140,7 @@
 }
 % 非数学环境使用此输出评分标准
 \newcommand{\scoretext}[1]{\xdotfill{1pt}[blue]\myscore{#1}\par\noindent\ignorespaces}
-% 
+% 数学环境使用此输出评分标准
 \newcommand{\scoreeqno}[1]{\eqno{\cdotfill\text{\myscore{#1}}}}
 \newcommand{\scoretag}[1]{\tag*{$\cdots\cdots$\myscore{#1}}}
 
@@ -154,9 +153,8 @@
 % 多小问的题目以罗马字母开头
 \renewcommand{\thepartno}{\Roman{partno}}
 
-% 输出左边学生需要填写信息的表格和页码
-\lhead{\databox} 
-\cfoot{第\thepage~页~,~共\numpages~页}
+% 输出左边学生需要填写信息的表格
+\lhead{\databox}
 
 % 定义输出大小写罗马数字的命令
 \newcommand{\rmnum}[1]{\romannumeral #1}
