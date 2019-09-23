@@ -150,7 +150,7 @@
 \newcommand{\tf}[1][{}]{%
 \fillin[#1][0.25in]%
 }
-% 多小问的题目以罗马字母开头
+% 大题的小问的标号以罗马字母标号
 \renewcommand{\thepartno}{\Roman{partno}}
 
 % 输出左边学生需要填写信息的表格
