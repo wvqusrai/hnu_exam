@@ -34,6 +34,9 @@
 
 % 试卷纸张设置，16开的纸（两页合成一个大页的方式）
 \geometry{paperheight=270mm,paperwidth=195mm} 
+% 设置试卷的页眉页脚与页边距的距离
+\geometry{vmargin={1.5cm,2cm},footskip=0.5cm,marginparsep=0cm}
+\geometry{inner=3cm,outer=1cm}
 
 % 设置首行缩进
 \setlength{\parindent}{0em}
@@ -112,7 +115,7 @@
 	\end{EnvFullwidth}
 }
 
-% 开始一个大题的命令，每个小题分数不一定相同
+% 开始一个大题的命令，每个小题分数不一定相同（beta测试命令）
 \newcommand{\makepartnoteq}[3]{
 	\stepcounter{dati}
 	\vspace{0.5em}%
