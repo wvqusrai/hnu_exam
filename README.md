@@ -10,8 +10,8 @@
 - 评分标准部分参考自jnuexam. https://ctan.org/pkg/jnuexam
 - 左边表格学生信息部分参考自我问的问题（别人给出的解答）： https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page
 - 采用连续题序标号(类似高考题的题序标号)
-- 16开的纸张，具体是270mm,195mm的16开纸。
-- 两张16开的纸合成一张大的纸。双面，分左右页边距。
+- 16开的纸张，具体是长270mm,宽195mm的16开纸。
+- 两张16开的纸合成一张大的8开的纸。双栏单面，分左右页边距。
 - 使用xeLaTeX运行一遍.tex文件。
 - 模板来源于word版文件
 
