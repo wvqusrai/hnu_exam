@@ -7,6 +7,7 @@
 ---
 ## 模板说明
 - 试题部分完全支持exam文档类. https://www.ctan.org/pkg/exam
+  - 将```\fullwidth```封闭成了```\makepart```
 - 评分标准部分参考自jnuexam. https://ctan.org/pkg/jnuexam
 - 左边表格学生信息部分参考自我问的问题（别人给出的解答）： https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page
 - 采用连续题序标号(类似高考题的题序标号)
