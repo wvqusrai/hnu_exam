@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.3.4)  2 OCT 2019 21:11
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.3.4)  2 OCT 2019 21:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -904,7 +904,7 @@ Package fontspec Info: Font family 'SimSun(0)' created for font 'SimSun' with
 (fontspec)             <->"SimSun/OT:script=hani;language=DFLT;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-No file calculus_no_answer.aux.
+(./calculus_no_answer.aux)
 \openout1 = `calculus_no_answer.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -921,7 +921,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
@@ -1048,232 +1048,29 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 16.
  (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:18: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.18 ^^I^^I题号 &
-                一 & 二 & 三 & 四 & 总分 & 合分人            & 复查人            \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:18: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.18 ^^I^^I题号 & 一 &
-                    二 & 三 & 四 & 总分 & 合分人            & 复查人            \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:18: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.18 ^^I^^I题号 & 一 & 二 &
-                        三 & 四 & 总分 & 合分人            & 复查人            \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:18: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.18 ^^I^^I题号 & 一 & 二 & 三 &
-                            四 & 总分 & 合分人            & 复查人            \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:18: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.18 ^^I^^I题号 & 一 & 二 & 三 & 四 &
-                                总分 & 合分人            & 复查人            \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:18: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.18 ^^I^^I题号 & 一 & 二 & 三 & 四 & 总分 &
-                                     合分人            & 复查人            \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:18: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.18 ...题号 & 一 & 二 & 三 & 四 & 总分 & 合分人            &
-                                                   复查人            \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:20: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.20 ^^I^^I总分 &
-                15 & 15 & 10 & 60 & 100  & \multirow{2}{*}{} & \multirow{2}{...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:20: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.20 ^^I^^I总分 & 15 &
-                     15 & 10 & 60 & 100  & \multirow{2}{*}{} & \multirow{2}{...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:20: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.20 ^^I^^I总分 & 15 & 15 &
-                          10 & 60 & 100  & \multirow{2}{*}{} & \multirow{2}{...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:20: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.20 ^^I^^I总分 & 15 & 15 & 10 &
-                               60 & 100  & \multirow{2}{*}{} & \multirow{2}{...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:20: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.20 ^^I^^I总分 & 15 & 15 & 10 & 60 &
-                                    100  & \multirow{2}{*}{} & \multirow{2}{...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:20: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.20 ^^I^^I总分 & 15 & 15 & 10 & 60 & 100  &
-                                           \multirow{2}{*}{} & \multirow{2}{...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:20: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.20 ... 15 & 10 & 60 & 100  & \multirow{2}{*}{} &
-                                                   \multirow{2}{*}{} \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:21: Extra alignment tab has been changed to \cr.
-<template> \endtemplate 
-                        
-l.21 ^^I^^I\cline{1-6}
-                      
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:22: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.22 ^^I^^I得分 &
-                   &    &    &    &      &                   &              ...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:22: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.22 ^^I^^I得分 &    &
-                        &    &    &      &                   &              ...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:22: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.22 ^^I^^I得分 &    &    &
-                             &    &      &                   &              ...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:22: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.22 ^^I^^I得分 &    &    &    &
-                                  &      &                   &              ...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:22: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.22 ^^I^^I得分 &    &    &    &    &
-                                         &                   &              ...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:22: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.22 ^^I^^I得分 &    &    &    &    &      &
-                                                             &              ...
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-c:/Users/WVQUSRAI/Documents/GitHub/hnu_exam/calculus_no_answer.tex:22: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.22 ...    &    &    &      &                   &
-                                                                     \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 30.
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 90.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 89.
+
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 90.
+(Font)              size <10.95> substituted on input line 89.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 90.
+(Font)              size <10.95> substituted on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 90.
+(Font)              size <10.95> substituted on input line 89.
 
 [1
 
-] [2] [3] [4
+] [2] [3
 
-] [5
+] [4
 
 ]
-This exam contains 21 questions with 0 parts, 0 subparts, and 0 subsubparts.
-
-Class exam Warning: Point totals have changed. Rerun to get point totals right.
-
+This exam contains 20 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./calculus_no_answer.aux)
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1282,17 +1079,14 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 29577 strings out of 492933
- 621576 string characters out of 6136538
- 721371 words of memory out of 5000000
- 33171 multiletter control sequences out of 15000+600000
- 543013 words of font info for 112 fonts, out of 8000000 for 9000
+ 29575 strings out of 492933
+ 621472 string characters out of 6136538
+ 717371 words of memory out of 5000000
+ 33168 multiletter control sequences out of 15000+600000
+ 543005 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,19n,81p,871b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,19n,81p,871b,498s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on calculus_no_answer.pdf (5 pages).
+Output written on calculus_no_answer.pdf (4 pages).
