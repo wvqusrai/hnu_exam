@@ -78,7 +78,7 @@
   \gdef\databox{}%
 }
 
-% 表头
+% 衡阳师范学院抬头
 \newcommand{\examinformation}[5]{%
 	\begin{center}%
 		{\fontsize{18pt}{2\baselineskip}\selectfont\heiti\bfseries #1\\
@@ -87,7 +87,7 @@
 			\ifprintanswers
 				参考答案及评分标准\\
 			\fi
-			\vspace{0.1em}			
+			\vspace{0.2em}			
 		}{\fontsize{10.5pt}{2\baselineskip}\selectfont\songti
 		考核类型:~#4\hspace{1cm}考试时量：#5~分钟%
 		}
