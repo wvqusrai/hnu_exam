@@ -5,7 +5,9 @@
 - different types of questions continuous labeling
 - student information table on the left of the first page. The table which I don't know how to deal with is drawed by a question that I ask in stackexchange. https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page
 ---
-## 模板说明
+## 模板（使用）说明
+- 中文支持使用的是xeCJK包。所以，
+  - **请使用xeLaTeX运行一遍.tex文件**。
 - 试题部分完全支持exam文档类. https://www.ctan.org/pkg/exam
   - 将exam文档类里的```\fullwidth```封装成了新建了一个大题命令```\makepart```
   - 所以试卷正文部分怎么输入，完全参考exam文档类里的格式，并结合```LaTeX```语法。
@@ -14,8 +16,6 @@
 - 采用连续题序标号(类似高考题的题序标号)
 - 16开的纸张，具体是长270mm,宽195mm的16开纸。
 - 两张16开的纸合成一张大的8开的纸。双栏单面，分左右页边距。
-- 中文支持使用的是xeCJK包。所以，
-  - **请使用xeLaTeX运行一遍.tex文件**。
 - 对抬头的字号，大题的字号，正文的字号，都使用的是pt表示出来，根据其它地方的说明，和标准的尺寸有一点点偏差，有兴趣的可以查阅资料看看。
 - 模板来源于教务处word版模板。http://jwc.hynu.cn/info/1087/4209.htm
 
