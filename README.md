@@ -1,15 +1,8 @@
-# Note
-- The .cls file is for Hengyang Normal University exam template.
-- .tex files are some examples.
-- It is based on exam and jnuexam template on ctan: https://www.ctan.org/pkg/exam and https://ctan.org/pkg/jnuexam
-- different types of questions continuous labeling
-- student information table on the left of the first page. The table which I don't know how to deal with is drawed by a question that I ask in stackexchange. https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page
----
-## 模板（使用）说明
+# 模板（使用）说明
 - 中文支持使用的是xeCJK包。所以，**请使用xeLaTeX运行一遍.tex文件**。
-- 试题部分完全支持exam文档类. https://www.ctan.org/pkg/exam
+- 试题部分完全归功于exam文档类的作者. https://www.ctan.org/pkg/exam
   - 将exam文档类里的```\fullwidth```封装成了新建了一个大题命令```\makepart```
-  - 所以试卷正文部分怎么输入，完全参考exam文档类里的格式，并结合```LaTeX```语法。
+  - 所以**试卷正文部分怎么输入，完全参考exam文档类里的格式，并结合```LaTeX```语法**。
 - 具体使用方法请查看exam文档类，Windows下运行命令```texdoc exam```，或者查阅上面的ctan，或者网上的中英文资料，如：https://blog.csdn.net/xovee/article/details/90599346
 - 评分标准部分参考自jnuexam. https://ctan.org/pkg/jnuexam
 - 左边表格学生信息部分参考自我问的问题（别人给出的解答）： https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page
@@ -33,3 +26,10 @@
 - 一个大题包含多少个小题本身可以自身计算出来，一是我偷懒了，二是为了提醒自己将总分核对完整。
   - exam文档类自带了打印开始的计分表格，但是只能按照每一个小题，或者按照页码来。这不符合本来的模板。未来会将.aux辅助文件来实现，或者参考exam的源代码。
   - exam文档类最后更新是2017年，但事实上，作者的个人主页上有2019年暑假的beta版。
+#### Note
+- The .cls file is for Hengyang Normal University exam template.
+- .tex files are some examples.
+- It is based on exam and jnuexam template on ctan: https://www.ctan.org/pkg/exam and https://ctan.org/pkg/jnuexam
+- different types of questions continuous labeling
+- student information table on the left of the first page. The table which I don't know how to deal with is drawed by a question that I ask in stackexchange. https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page
+---
