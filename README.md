@@ -6,8 +6,7 @@
 - student information table on the left of the first page. The table which I don't know how to deal with is drawed by a question that I ask in stackexchange. https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page
 ---
 ## 模板（使用）说明
-- 中文支持使用的是xeCJK包。所以，
-  - **请使用xeLaTeX运行一遍.tex文件**。
+- 中文支持使用的是xeCJK包。所以，**请使用xeLaTeX运行一遍.tex文件**。
 - 试题部分完全支持exam文档类. https://www.ctan.org/pkg/exam
   - 将exam文档类里的```\fullwidth```封装成了新建了一个大题命令```\makepart```
   - 所以试卷正文部分怎么输入，完全参考exam文档类里的格式，并结合```LaTeX```语法。
@@ -26,8 +25,9 @@
 - （待改进？）根据exam文档类，留空白作答，可能需要根据题目的长度来手动调节在哪里分页。
 - （待改进）因为左边学生表格信息当成页边距，所以页码看上去不是居中的。
 - （待改进）如果选择题ABCD四个选项太长，可以手动在B答案后面加入\\\进行换行，希望未来可以像其它模板一样实现自动判断是分四行、分两行还是一行输出选择题的选项。这样子弄出来的两行，B答案和D答案可能并不对齐，要么不考虑对齐，要么加入空格（如\hspace*{2em}）来对齐。
-- 并没有使用多文档形式。
-- 没有使用试题库
-- 没有实现怎么将首页的页边距设置与其它页的页边距不同。geometry宏包我没有找到很好的解决方法，可能有部分我没有读懂。
+- exam文档类没有使用多文档形式，没有使用试题库
+- 没有实现怎么将首页的页边距设置与其它页的页边距不同。geometry宏包我没有找到很好的解决方法，可能有部分我没有读懂。（exam文档类自带了边距控制命令）。
 - 出现同一个大题的不同小题如果分值不同的情况时，大题命令还没有做完。
 - 一个大题包含多少个小题本身可以自身计算出来，一是我偷懒了，二是为了提醒自己将总分核对完整。
+  - exam文档类自带了打印开始的计分表格，但是只能按照每一个小题，或者按照页码来。这不符合本来的模板。未来会将.aux辅助文件来实现，或者参考exam的源代码。
+  - exam文档类最后更新是2017年，但事实上，作者的个人主页上有2019年暑假的beta版。
