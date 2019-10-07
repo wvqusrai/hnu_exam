@@ -1,5 +1,5 @@
 # 模板（使用）说明
-- 中文支持使用的是xeCJK包。所以，**请使用xeLaTeX运行一遍.tex文件**。
+- 中文支持使用的是xeCJK包。所以，**请使用xeLaTeX运行两遍.tex文件**。
 - 试题部分完全归功于exam文档类的作者. https://www.ctan.org/pkg/exam
   - 将exam文档类里的```\fullwidth```封装成了新建了一个大题命令```\makepart```
   - 所以**试卷正文部分怎么输入，完全参考exam文档类里的格式，并结合```LaTeX```语法**。
