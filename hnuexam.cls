@@ -12,12 +12,13 @@
 \RequirePackage{xeCJK,zhnumber}
 \RequirePackage{geometry}
 \RequirePackage{indentfirst}
-\RequirePackage{xhfill,color,etoolbox,expl3}
-\RequirePackage{multirow,tabularx,tabu,diagbox}
-\RequirePackage{bbding}
+\RequirePackage{xhfill,xcolor}
+\RequirePackage{etoolbox,expl3,xparse,xinttools,xfp,totcount}
+\RequirePackage{multirow,tabu,diagbox}
 %\RequirePackage is very similar to the well-known \usepackage
 
 \DeclareOption{answer}{\printanswers}
+\DeclareOption{addtable}{\addpoints}
 %The command \DeclareOption{}{} handles a given option. It takes two parameters, the first one is the name of the option and the second one is the code to execute if the option is passed.
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 %\PassOptionsToClass{}{}. Passes the option inside the first pair of braces to the document class set inside the second pair of braces. 
@@ -94,19 +95,26 @@
 	\end{center}
 }
 
-% 定义大题计数器并初始化为0
-\newcounter{dati}
-\setcounter{dati}{0}
+% 定义大题、总分计数器并初始化为0
+\newtotcounter{examSection}
+\newtotcounter{sumpoints}
 
+% LaTeX3 语法
+\ExplSyntaxOn
+\clist_new:N \g_grades_clist
+\clist_new:N \g_grades_aux_clist
 % 开始一个大题的命令
-\newcommand{\makepart}[3]{
+\NewDocumentCommand{\makepart}{ m m m }{
+   	\stepcounter{examSection}
+	\addtocounter{sumpoints}{#3}
+	 % store both the  score in \g_grades_clist
+	\__add_to_grades_list:n  { #3 }
 	\begin{EnvFullwidth}
-		\stepcounter{dati}
 		\vspace{0.05em}%
 		\fontsize{14pt}{16.8pt}\selectfont
 		\begin{tabular}{|c|c|c}
 			\cline{1-2}
-			得分 & 评阅人 & \multirow{2}{*}{\zhnum{dati}、#1(每小题~#2~分，共~#3~分)} \\
+			得分 & 评阅人 & \multirow{2}{*}{\zhnum{examSection}、#1(每小题~#2~分，共~#3~分)} \\
 			\cline{1-2}
 			& & \\
 			\cline{1-2}
@@ -115,6 +123,75 @@
 		\vspace{0.5em}
 	\end{EnvFullwidth}
 }
+% add score to \g_grades_clist
+\cs_new:Nn \__add_to_grades_list:n {
+  \clist_gput_right:Nx \g_grades_clist { #1 }
+}
+% 按题型打印表格
+\NewDocumentCommand{\sectiongradetable}{}{
+    \if@addpoints
+        \@ifundefined{exam@numpoints}{%
+                \ClassWarning{exam}{%
+                    You must run LaTeX again to produce the table.\MessageBreak
+                }%
+                \fbox{Please Run \LaTeX{} again to produce the table}%
+             }%
+            {\constructionTable}%
+    \else
+        \ClassError{exam}{%
+              You must give the command \protect\addpoints\MessageBreak
+              \space\space in order to create a grade table.\MessageBreak
+          }{%
+              If you don't give the command \protect\addpoints\MessageBreak
+              \space\space then we're not keeping track of point values.
+              \MessageBreak
+          }%
+  \fi
+}
+
+% set grade list from the aux file
+\NewDocumentCommand\SetGradeList{m}{
+	\clist_gset:Nn \g_grades_aux_clist {#1}
+}
+
+% 写入辅助文件
+\AtEndDocument{
+  \iow_now:cx { @auxout } {
+    \token_to_str:N \SetGradeList { \g_grades_clist  } ^^J
+  }
+}
+
+% 实际输出表格的命令，使用xinittools包来循环
+\NewDocumentCommand{\constructionTable}{}{
+	\fontsize{10.5pt}{1.5\baselineskip}\selectfont
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|*{\inteval{4+\totvalue{examSection}}}{c|}}
+			\hline
+			题号 \xintFor* ##1 in {\xintSeq {1}{\totvalue{examSection}}} \do {&\zhnumber{##1}} & 总分 & 合分人 & 复查人\\
+			\hline
+			总分 \xintFor ##1 in  \g_grades_aux_clist \do {& ##1} & \total{sumpoints} & \multirow{2}{*}{} & \multirow{2}{*}{} \\
+			\cline{1-\inteval{2+\totvalue{examSection}}}
+			得分  \xintFor* ##1 in {\xintSeq {1}{\inteval{1+\totvalue{examSection}}}} \do{&} &  &\\
+			\hline
+		\end{tabular}
+	\end{table}
+	\normalsize		
+}
+\ExplSyntaxOff
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 一个实际的表格的样子
+% \begin{tabular}{|c|c|c|c|c|c|c|c|}
+% 	\hline
+% 	题号 & 一 & 二 & 三 & 四 & 总分 & 合分人            & 复查人            \\
+% 	\hline
+% 	总分 & 15 & 15 & 10 & 60 & 100  & \multirow{2}{*}{} & \multirow{2}{*}{} \\
+% 	\cline{1-6}
+% 	得分 &    &    &    &    &      &                   &                   \\
+% 	\hline
+% \end{tabular}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 开始一个大题的命令，每个小题分数不一定相同（beta测试命令）
 \newcommand{\makepartnoteq}[3]{
