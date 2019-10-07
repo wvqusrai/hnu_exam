@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.3.4)  7 OCT 2019 17:43
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.3.4)  7 OCT 2019 17:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -810,6 +810,8 @@ Package: fp-eval 1995/04/03
 \diagbox@insepr=\dimen313
 \diagbox@outsepl=\dimen314
 \diagbox@outsepr=\dimen315
+) (c:/texlive/2018/texmf-dist/tex/latex/bbding/bbding.sty
+Package: bbding 1999/04/15 v1.01 Dingbats symbols
 )
 
 Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
@@ -838,7 +840,7 @@ Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
 (fontspec)             <->"Times New
 (fontspec)             Roman/BI/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
 
-LaTeX Info: Redefining \rmfamily on input line 33.
+LaTeX Info: Redefining \rmfamily on input line 34.
 
 
 Package xeCJK Warning: Unknown CJK family `\CJKrmdefault' is being ignored.
@@ -869,7 +871,7 @@ Package fontspec Info: Font family 'Arial(0)' created for font 'Arial' with
 (fontspec)             - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
 (fontspec)             <->"Arial/BI/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
 
-LaTeX Info: Redefining \sffamily on input line 35.
+LaTeX Info: Redefining \sffamily on input line 36.
 \c@examSection=\count364
 \c@examSection@totc=\count365
 \c@sumpoints=\count366
@@ -1086,10 +1088,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 30107 strings out of 492933
- 630139 string characters out of 6136538
- 726299 words of memory out of 5000000
- 33692 multiletter control sequences out of 15000+600000
+ 30238 strings out of 492933
+ 632053 string characters out of 6136538
+ 727513 words of memory out of 5000000
+ 33819 multiletter control sequences out of 15000+600000
  543005 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,19n,81p,878b,504s stack positions out of 5000i,500n,10000p,200000b,80000s

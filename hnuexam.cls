@@ -7,14 +7,15 @@
 %The command ProvidesClass{exampleclass}[...] identifies this class as exampleclass and, inside the brackets, the release date and some additional information is included. The date should be in the form YYYY/MM/DD
 
 \LoadClass{exam}
-\RequirePackage{amsmath,amssymb,amsthm}
-\RequirePackage{tikz}
-\RequirePackage{xeCJK,zhnumber}
-\RequirePackage{geometry}
-\RequirePackage{indentfirst}
-\RequirePackage{xhfill,xcolor}
-\RequirePackage{etoolbox,expl3,xparse,xinttools,xfp,totcount}
-\RequirePackage{multirow,tabu,diagbox}
+\RequirePackage{amsmath,amssymb,amsthm}	%美国数学学会系列
+\RequirePackage{tikz}	%tikz用于画图包
+\RequirePackage{xeCJK,zhnumber} %支持中文，中文数字包
+\RequirePackage{geometry}	%设置页边距等
+\RequirePackage{indentfirst}	%设置首段缩进
+\RequirePackage{xhfill,xcolor}	%评分标准右对齐，颜色包
+\RequirePackage{etoolbox,expl3,xparse,xinttools,xfp,totcount}%LaTeX3及其它包
+\RequirePackage{multirow,tabu,diagbox} %表格包，表格多行合并包
+\RequirePackage{bbding}	%对错符号包
 %\RequirePackage is very similar to the well-known \usepackage
 
 \DeclareOption{answer}{\printanswers}
