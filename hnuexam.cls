@@ -5,6 +5,7 @@
 %2019/06/15 version 1.2
 %2019/09/29 version 1.3
 %2019/10/7  version 2.0
+%2019/10/17 version 2.1
 %The command ProvidesClass{exampleclass}[...] identifies this class as exampleclass and, inside the brackets, the release date and some additional information is included. The date should be in the form YYYY/MM/DD
 
 \LoadClass{exam}
@@ -148,7 +149,7 @@
 % 	\end{EnvFullwidth}
 % }
 
-% \str_new:N
+% \str_new:N \l__hnu_allpoints_str 应该可以不用这个变量也能实现。这里用了。
 \str_new:N \l__hnu_allpoints_str 
 \NewDocumentCommand{\makepart}{ m o m }{
    	\stepcounter{examSection}
@@ -156,7 +157,6 @@
 	 % store both the  score in \g_grades_clist
 	\__add_to_grades_list:n  { #3 }	
 
-	%
 	\str_clear:N \l__hnu_allpoints_str 
 	\IfNoValueF {#2} {\str_set:Nn \l__hnu_allpoints_str { 每小题~#2~分，}}
 	\begin{EnvFullwidth}
