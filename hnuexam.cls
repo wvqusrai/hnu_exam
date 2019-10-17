@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 %The command \NeedsTeXFormat{LaTeX2e} sets the LATEX version for the class to work. Additionally, a date can be added within brackets to specify the minimal release date required.
-\ProvidesClass{hnuexam}[2019/06/15 Example LaTeX class]
+\ProvidesClass{hnuexam}[2019/10/17 HnuExam Document Class]
 %2019/05/27 version 1.1
 %2019/06/15 version 1.2
 %2019/09/29 version 1.3
@@ -14,9 +14,11 @@
 \RequirePackage{geometry}	%设置页边距等
 \RequirePackage{indentfirst}	%设置首段缩进
 \RequirePackage{xhfill,xcolor}	%评分标准右对齐，颜色包
-\RequirePackage{etoolbox,expl3,xparse,xinttools,xfp,totcount}%LaTeX3及其它包
+\RequirePackage{expl3,xparse}	%LaTeX3
+\RequirePackage{etoolbox,xinttools,xfp,totcount} %一些有用的宏包
 \RequirePackage{multirow,tabu,diagbox} %表格包，表格多行合并包
 \RequirePackage{bbding}	%对错符号包
+\RequirePackage{siunitx} % 国际单位制宏包（典型的一个LaTeX3实现的宏包）
 %\RequirePackage is very similar to the well-known \usepackage
 
 \DeclareOption{answer}{\printanswers}
@@ -27,14 +29,33 @@
 
 \ProcessOptions\relax
 %The command \ProcessOptions\relax executes the code fore each option and must be inserted after all the option-handling commands were typed. There's a starred version of this command that will execute the options in the exact order specified by the calling commands.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%宏包前言%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% 中英文字体设置
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 中英文字体设置
+% 中文字体设置
+\setCJKmainfont{SIMSUN.TTC}
 \newCJKfontfamily[song]\songti{SimSun}
 \newCJKfontfamily[hei]\heiti{SimHei}
+% 英文字体设置
 \setmainfont{Times New Roman}
 \setsansfont{Arial}
 % 定义默认字体大小和行距
 \renewcommand{\normalsize}{\fontsize{12pt}{\baselineskip}\selectfont}
+% 其它比较常见的字体字号设置
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
+
 
 % 试卷纸张设置，16开的纸（两页合成一个大页的方式）
 \geometry{paperheight=270mm,paperwidth=195mm} 
@@ -51,7 +72,7 @@
 % 打印右边学生信息命令
 \newcommand{\databox}{%
   \smash{\makebox[0pt][r]{%
-  	\fontsize{10.5pt}{15.75pt}\selectfont
+  	\wuhao
     \begin{tabular}[t]{|p{2cm}<{\centering}|}
     \multicolumn{1}{c}{} \\[2in] % lower the box
     \hline
@@ -91,7 +112,7 @@
 				参考答案及评分标准\\
 			\fi
 			\vspace{0.2em}			
-		}{\fontsize{10.5pt}{2\baselineskip}\selectfont\songti
+		}{\wuhao\songti
 		考核类型:~#4\hspace{1cm}考试时量：#5~分钟%
 		}
 	\end{center}
@@ -101,22 +122,49 @@
 \newtotcounter{examSection}
 \newtotcounter{sumpoints}
 
-% LaTeX3 语法
+%%%%%%%%%%%%%%%%%%%%%%%%% LaTeX3 部分
+% 开启LaTeX3语法大门
 \ExplSyntaxOn
 \clist_new:N \g_grades_clist
 \clist_new:N \g_grades_aux_clist
 % 开始一个大题的命令
-\NewDocumentCommand{\makepart}{ m m m }{
+% \NewDocumentCommand{\makepart}{ m o m }{
+%    	\stepcounter{examSection}
+% 	\addtocounter{sumpoints}{#3}
+% 	 % store both the  score in \g_grades_clist
+% 	\__add_to_grades_list:n  { #3 }
+% 	\begin{EnvFullwidth}
+% 		\vspace{0.05em}%
+% 		\fontsize{14pt}{16.8pt}\selectfont
+% 		\begin{tabular}{|c|c|c}
+% 			\cline{1-2}
+% 			得分 & 评阅人 & \multirow{2}{*}{\zhnum{examSection}、#1(每小题~#2~分，共~#3~分)} \\
+% 			\cline{1-2}
+% 			& & \\
+% 			\cline{1-2}
+% 		\end{tabular}
+% 		\normalsize
+% 		\vspace{0.5em}
+% 	\end{EnvFullwidth}
+% }
+
+% \str_new:N
+\str_new:N \l__hnu_allpoints_str 
+\NewDocumentCommand{\makepart}{ m o m }{
    	\stepcounter{examSection}
 	\addtocounter{sumpoints}{#3}
 	 % store both the  score in \g_grades_clist
-	\__add_to_grades_list:n  { #3 }
+	\__add_to_grades_list:n  { #3 }	
+
+	%
+	\str_clear:N \l__hnu_allpoints_str 
+	\IfNoValueF {#2} {\str_set:Nn \l__hnu_allpoints_str { 每小题~#2~分，}}
 	\begin{EnvFullwidth}
 		\vspace{0.05em}%
-		\fontsize{14pt}{16.8pt}\selectfont
+		\sihao
 		\begin{tabular}{|c|c|c}
 			\cline{1-2}
-			得分 & 评阅人 & \multirow{2}{*}{\zhnum{examSection}、#1(每小题~#2~分，共~#3~分)} \\
+			得分 & 评阅人 & \multirow{2}{*}{\zhnum{examSection}、#1(\str_use:N \l__hnu_allpoints_str 共~#3~分)} \\
 			\cline{1-2}
 			& & \\
 			\cline{1-2}
@@ -125,16 +173,17 @@
 		\vspace{0.5em}
 	\end{EnvFullwidth}
 }
-% add score to \g_grades_clist
+
+% 在新增一个大题时将这个大题的总分写入\g_grades_clist这个列表数据结构变量
 \cs_new:Nn \__add_to_grades_list:n {
-  \clist_gput_right:Nx \g_grades_clist { #1 }
+	\clist_gput_right:Nx \g_grades_clist { #1 }	% add score to \g_grades_clist
 }
-% 按题型打印表格
+% 按题型打印表格(目前的实现方式是一定要有表格，可以修改为不一定要有表格)
 \NewDocumentCommand{\sectiongradetable}{}{
     \if@addpoints
         \@ifundefined{exam@numpoints}{%
                 \ClassWarning{exam}{%
-                    You must run LaTeX again to produce the table.\MessageBreak
+                    You~must~run~LaTeX~again~to~produce~the~table.\MessageBreak
                 }%
                 \fbox{Please Run \LaTeX{} again to produce the table}%
              }%
@@ -151,22 +200,24 @@
   \fi
 }
 
-% set grade list from the aux file
-\NewDocumentCommand\SetGradeList{m}{
+
+% 新建这个与大题分数列表相关的命令，在第二次运行时由于将执行命令定入了辅助文件，所以第二次会执行
+\NewDocumentCommand\SetGradeList{m}{	% set grade list from the aux file
 	\clist_gset:Nn \g_grades_aux_clist {#1}
 }
 
-% 写入辅助文件
+% 写入辅助文件，在结束文档时写入
 \AtEndDocument{
-  \iow_now:cx { @auxout } {
-    \token_to_str:N \SetGradeList { \g_grades_clist  } ^^J
+  \iow_now:cx { @auxout } {	%LaTeX3的读写文件的函数
+	\token_to_str:N \SetGradeList { \g_grades_clist  } ^^J
+	% ^^J表示一个回车。
   }
 }
 
 % 实际输出表格的命令，使用xinittools包来循环
 \NewDocumentCommand{\constructionTable}{}{
-	\fontsize{10.5pt}{1.5\baselineskip}\selectfont
-	\begin{table}[h]
+	\fontsize{10.5pt}{1.5\baselineskip}\selectfont %表格内文字字体设置
+	\begin{table}[h]	%表格输入实体部分，可以不用浮动体，用h表示强制要放在抬头部分
 		\centering
 		\begin{tabular}{|*{\inteval{4+\totvalue{examSection}}}{c|}}
 			\hline
@@ -178,11 +229,12 @@
 			\hline
 		\end{tabular}
 	\end{table}
-	\normalsize		
+	\normalsize	%恢复默认字体设置
 }
 \ExplSyntaxOff
+%	LaTeX3部分结束
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 一个实际的表格的样子
 % \begin{tabular}{|c|c|c|c|c|c|c|c|}
 % 	\hline
@@ -193,21 +245,8 @@
 % 	得分 &    &    &    &    &      &                   &                   \\
 % 	\hline
 % \end{tabular}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% 开始一个大题的命令，每个小题分数不一定相同（beta测试命令）
-\newcommand{\makepartnoteq}[3]{
-	\stepcounter{dati}
-	\vspace{0.5em}%
-	\noindent\begin{tabular}{|c|c|c}
-		\cline{1-2}
-		得分 & 评阅人 & \multirow{2}{*}{\zhnum{dati}、#1({共~#2~小题，共#3分})} \\
-		\cline{1-2}
-		& & \\
-		\cline{1-2}
-	\end{tabular}
-	\vspace{1em}
-}
 
 % 表，分，页等中文个性化输出
 \renewcommand{\tablename}{表}
