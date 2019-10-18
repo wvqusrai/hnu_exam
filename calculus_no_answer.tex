@@ -1,7 +1,10 @@
 \documentclass[addtable,twoside,12pt]{hnuexam}
-% 以下几个命令是exam包中的标准命令
-\setlength\linefillheight{.35in} %设置空白答案处二横线间的高度
-\setlength\linefillthickness{0.1pt} %设置线的宽度
+% 为了和含答案的版本基本一致，这里没有答案的也写了答案，只是没有加入显示答案的选项
+
+% 以下几个命令是exam包中的标准命令，与此类似的还有其它几个命令，比如加作文格子等。
+% 如果不需要横线，直接将下面两行注释或删除即可
+\setlength\linefillheight{.35in} 	% 设置空白答案处二横线间的高度
+\setlength\linefillthickness{0.1pt} % 设置线的宽度
 
 \begin{document}
 \examinformation%
@@ -82,8 +85,10 @@
 \question 如果常数项级数$\sum\limits_{n=1}^{\infty}a_n$收敛,那么$\lim\limits_{n\to \infty}a_n=0$.\hfill\tf[\Checkmark]
 \question 如果常数项级数$\sum\limits_{n=1}^{\infty}a_n$收敛,那么$\lim\limits_{n\to \infty}a_n=0$.\hfill\tf[\Checkmark]
 		
+%%%%%%%%%%%%%%%%%%%%这里给出一个每个大题分数不一样的例子%%%%%%%%%%%%%%%%%%
+%% 请注意，这里\makepart命令只有两个参数，可选参数没有，因为有一些大题的分数不一样。
 \makepart{解答题}{60}
-\question
+\question[10]
 试将微分方程$x\frac{\mathrm{d}y}{\mathrm{d}x}=x^2+3y,\,x>0$转换成一阶非齐次线性微分方程的标准形式，然后使用常数变易法求解，最后对求得的结果进行验算。
 \begin{solution}
 一阶非齐次线性微分方程的标准形式为：$\frac{\mathrm{d}y}{\mathrm{d}x}+\frac{-3}{x}y=x.$\score{2}
@@ -99,7 +104,7 @@
 \vspace*{\stretch{1}}
 \clearpage
 
-\question
+\question[9]
 试求出不共线三点$P(1,-1,0),Q(2,1,-1),R(-1,1,2)$所确定的平面的单位法向量。
 \begin{solution}
 设法向量为$\vec{n}$,则$\vec{n}=\vec{PQ}\times\vec{PR}=
@@ -109,12 +114,12 @@
 	-2      & 2       & 2
 \end{vmatrix}=(6,0,6).$\score{7}
 
-故其单位法向量$\pm\frac{\vec{n}}{|\vec{n}|}=\pm\frac{\sqrt{2}}{2}(1,0,1).$\score{10}
+故其单位法向量$\pm\frac{\vec{n}}{|\vec{n}|}=\pm\frac{\sqrt{2}}{2}(1,0,1).$\score{9}
 \end{solution}
 \vspace*{\stretch{1}}
 
 
-\question
+\question[9]
 试求出不共线三点$P(1,-1,0),Q(2,1,-1),R(-1,1,2)$所确定的平面的单位法向量。
 \begin{solution}
 设法向量为$\vec{n}$,则$\vec{n}=\vec{PQ}\times\vec{PR}=
@@ -124,11 +129,11 @@
 	-2      & 2       & 2
 \end{vmatrix}=(6,0,6).$\score{7}
 
-故其单位法向量$\pm\frac{\vec{n}}{|\vec{n}|}=\pm\frac{\sqrt{2}}{2}(1,0,1).$\score{10}
+故其单位法向量$\pm\frac{\vec{n}}{|\vec{n}|}=\pm\frac{\sqrt{2}}{2}(1,0,1).$\score{9}
 \end{solution}
 \vspace*{\stretch{1}}
 
-\question
+\question[9]
 试求出不共线三点$P(1,-1,0),Q(2,1,-1),R(-1,1,2)$所确定的平面的单位法向量。
 \begin{solution}
 设法向量为$\vec{n}$,则$\vec{n}=\vec{PQ}\times\vec{PR}=
@@ -138,12 +143,12 @@
 	-2      & 2       & 2
 \end{vmatrix}=(6,0,6).$\score{7}
 	
-故其单位法向量$\pm\frac{\vec{n}}{|\vec{n}|}=\pm\frac{\sqrt{2}}{2}(1,0,1).$\score{10}
+故其单位法向量$\pm\frac{\vec{n}}{|\vec{n}|}=\pm\frac{\sqrt{2}}{2}(1,0,1).$\score{9}
 \end{solution}
 \vspace*{\stretch{1}}
 \clearpage
 
-\question
+\question[10]
 求函数$f(x,y)=x+y$在$g(x,y)=x^2+y^2=1$限制下的条件最大值与最小值。（提示：可以使用拉格朗日乘数法。）
 \begin{solution}
 注：此题也可以不使用乘数法。小题可以看几何意义，大题可以用三角函数代换。另外也可以使用从限制条件中解出$y$代入$f$来解无条件极值。
@@ -165,7 +170,8 @@ $\begin{cases}
 \end{solution}
 \vspace*{\stretch{1}}
 
-\question
+% 这个地方和有答案的文件里有区别
+\question[13]
 朱自清是怎么描写时间过得比较快的？
 \fillwithlines{\stretch{1}}
 \end{questions}

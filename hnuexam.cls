@@ -129,6 +129,7 @@
 \clist_new:N \g_grades_clist
 \clist_new:N \g_grades_aux_clist
 % 开始一个大题的命令
+%%% 本来想用两个不同的命令，后来还是用同一个命令，然后使用可选参数的方式。
 % \NewDocumentCommand{\makepart}{ m o m }{
 %    	\stepcounter{examSection}
 % 	\addtocounter{sumpoints}{#3}
@@ -149,22 +150,47 @@
 % 	\end{EnvFullwidth}
 % }
 
-% \str_new:N \l__hnu_allpoints_str 应该可以不用这个变量也能实现。这里用了。
-\str_new:N \l__hnu_allpoints_str 
-\NewDocumentCommand{\makepart}{ m o m }{
-   	\stepcounter{examSection}
-	\addtocounter{sumpoints}{#3}
-	 % store both the  score in \g_grades_clist
-	\__add_to_grades_list:n  { #3 }	
+%%%% \str_new:N \l__hnu_allpoints_str 应该可以不用这个变量也能实现。这里用了。
+% \str_new:N \l__hnu_allpoints_str 
+% \NewDocumentCommand{\makepart}{ m o m }{
+%    	\stepcounter{examSection}
+% 	\addtocounter{sumpoints}{#3}
+% 	 % store the score in \g_grades_clist
+% 	\__add_to_grades_list:n  { #3 }	
 
-	\str_clear:N \l__hnu_allpoints_str 
-	\IfNoValueF {#2} {\str_set:Nn \l__hnu_allpoints_str { 每小题~#2~分，}}
+% 	\str_clear:N \l__hnu_allpoints_str 
+% 	\IfNoValueF {#2} {\str_set:Nn \l__hnu_allpoints_str { 每小题~#2~分，}}
+% 	\begin{EnvFullwidth}
+% 		\vspace{0.05em}%
+% 		\sihao
+% 		\begin{tabular}{|c|c|c}
+% 			\cline{1-2}
+% 			得分 & 评阅人 & \multirow{2}{*}{\zhnum{examSection}、#1(\str_use:N \l__hnu_allpoints_str 共~#3~分)} \\
+% 			\cline{1-2}
+% 			& & \\
+% 			\cline{1-2}
+% 		\end{tabular}
+% 		\normalsize
+% 		\vspace{0.5em}
+% 	\end{EnvFullwidth}
+% }
+
+\NewDocumentCommand{\makepart}{ m o m }{
+  % 使用举例 \makepart{选择题}[3]{15}
+  % #1：题型，如“选择题”
+  % #2：当分值一样时，每小题多少分，是可选参数，使用方括号。如果每小题的分值不同，则这个参数省略。
+  % #3：这个大题的总分是多少，显示写出来，没有使用自动计算。 
+  \stepcounter{examSection} % 每开始一个大题，将大题计数器加一
+	\addtocounter{sumpoints}{#3}  % 统计总分
+	% 由于要在开头展示出每个大题的总分，所以需要将每个大题的总分写出辅助文件，我们采用的方式是先写入到一个“列表”这样的数据结构中。最后在文档结束时，写入辅助文件。
+  \__add_to_grades_list:n  { #3 }	% 将参数3的分值加到\g_grades_clist这个列表变量右边去。
+  % exam文档类中定义的EnvFullwidth环境
 	\begin{EnvFullwidth}
-		\vspace{0.05em}%
+	  \vspace{0.05em}%
 		\sihao
 		\begin{tabular}{|c|c|c}
 			\cline{1-2}
-			得分 & 评阅人 & \multirow{2}{*}{\zhnum{examSection}、#1(\str_use:N \l__hnu_allpoints_str 共~#3~分)} \\
+			得分 & 评阅人 & \multirow{2}{*}{\zhnum{examSection}、#1(\IfNoValueF {#2} {每小题~#2~分，} 共~#3~分)} \\
 			\cline{1-2}
 			& & \\
 			\cline{1-2}
@@ -172,13 +198,14 @@
 		\normalsize
 		\vspace{0.5em}
 	\end{EnvFullwidth}
-}
+}% \makepart{}[]{}命令结束
 
 % 在新增一个大题时将这个大题的总分写入\g_grades_clist这个列表数据结构变量
 \cs_new:Nn \__add_to_grades_list:n {
-	\clist_gput_right:Nx \g_grades_clist { #1 }	% add score to \g_grades_clist
+  \clist_gput_right:Nx \g_grades_clist { #1 }	
+  % 第四大题时会产生这样的效果(15,15,10)->(15,15,10,60)
 }
-% 按题型打印表格(目前的实现方式是一定要有表格，可以修改为不一定要有表格)
+% 按题型打印表格（目前的实现方式是一定要有表格，可以修改为不一定要有表格）
 \NewDocumentCommand{\sectiongradetable}{}{
     \if@addpoints
         \@ifundefined{exam@numpoints}{%
