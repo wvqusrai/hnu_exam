@@ -6,8 +6,6 @@
   - 所以**试卷正文部分怎么输入，完全参考exam文档类里的格式，并结合```LaTeX```语法**。
     - 具体使用方法请查看exam文档类，Windows下运行命令```texdoc exam```，或者查阅上面的ctan，或者网上的中英文资料，**如：https://blog.csdn.net/xovee/article/details/90599346**
     - 答案的显示方式可以参考上面的方法，在含答案的版本，导言里有设置一些参数。
-  - 具体使用方法请查看exam文档类，Windows下运行命令```texdoc exam```，或者查阅上面的ctan，或者网上的中英文资料，**如：https://blog.csdn.net/xovee/article/details/90599346**
-  - 答案的显示方式可以参考上面的方法，导言里有设置一些参数。
 - 评分标准部分参考自jnuexam. https://ctan.org/pkg/jnuexam
 - 左边表格学生信息部分参考自我问的问题（别人给出的解答）： https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page
 ## 模板情况说明
