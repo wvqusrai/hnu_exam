@@ -1,5 +1,5 @@
 # 模板使用说明
-- 中文支持使用的是xeCJK包。所以，**请使用xeLaTeX运行.tex文件**,由于要读取.aux辅助文件,**所以请运行两遍**，第一次运行结束后有提示信息。
+- 中文支持使用的是xeCJK包。所以，**请使用XeLaTeX运行.tex文件**,由于要读取.aux辅助文件,**所以请运行两遍**，第一次运行结束后有提示信息。
 ## 参考文献
 - 试题部分完全归功于exam文档类的作者. https://www.ctan.org/pkg/exam
   - 将exam文档类里的```\fullwidth```命令或者对应的```EnvFullwidth```环境封装成了新建了一个大题命令```\makepart```
@@ -8,14 +8,14 @@
     - 答案的显示方式可以参考上面的方法，在含答案的版本，导言里有设置一些参数。
 - 评分标准部分参考自jnuexam. https://ctan.org/pkg/jnuexam
 - 左边表格学生信息部分参考自我问的问题（别人给出的解答）： https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page
+- (2019/10/7) 将抬头的**表格自动生成**，采用`LaTeX3`方式。主要借鉴于下面链接的实现方式
+  - https://tex.stackexchange.com/questions/495534/custom-points-table-for-exam/495723#495723
 ## 模板情况说明
 - 采用连续题序标号(类似高考题的题序标号)
 - 16开的纸张，具体是长270mm,宽195mm的16开纸。两张16开的纸合成一张大的8开的纸。双栏单面，分左右页边距。
 - 对抬头的字号，大题的字号，正文的字号，都使用的是pt表示出来，根据其它地方的说明，和标准的尺寸有一点点偏差，有兴趣的可以查阅资料看看。
 - 模板来源于教务处word版模板。http://jwc.hynu.cn/info/1087/4209.htm
 ## 更新说明
-- (2019/10/7) 将抬头的**表格自动生成**，采用`LaTeX3`方式。主要借鉴于下面链接的实现方式
-  - https://tex.stackexchange.com/questions/495534/custom-points-table-for-exam/495723#495723
  - (2019/10/18) 将\makepart{}[]{}命令写成了可选参数形式
 
 ## 已知小问题或还没有做到的地方：
@@ -32,7 +32,8 @@
 - 一个大题包含多少个小题本身可以自身计算出来，一是我偷懒了，二是为了提醒自己将总分核对完整。(现在总分是自动计算的)
 
 ### 其它
-- exam文档类最后更新是2017年，但事实上，作者的个人主页上有2019年暑假的beta版。
+- exam文档类最后更新是2017年，但事实上，作者的个人主页上有2019年暑假的beta版。http://www-math.mit.edu/~psh/exam/betatest/exam.cls
+
 #### Note
 - The .cls file is for Hengyang Normal University exam template.
 - .tex files are some examples.
