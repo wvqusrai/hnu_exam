@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.23)  15 DEC 2019 16:45
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.23)  15 DEC 2019 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1300,32 +1300,32 @@ LaTeX Font Warning: Font shape `TU/SimHei(0)/bx/n' undefined
 (Font)              using `TU/SimHei(0)/m/n' instead on input line 15.
 
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 22.
-LaTeX Font Info:    Trying to load font information for U+ding on input line 81
+LaTeX Font Info:    Trying to load font information for U+ding on input line 82
 .
 (c:/texlive/2019/texmf-dist/tex/latex/bbding/Uding.fd
 File: Uding.fd 1996/02/01 v1.0 BBding font definitions
 )
 
 LaTeX Font Warning: Font shape `U/ding/bx/n' undefined
-(Font)              using `U/ding/m/n' instead on input line 81.
+(Font)              using `U/ding/m/n' instead on input line 82.
 
 
-Overfull \hbox (11.50822pt too wide) in paragraph at lines 81--81
+Overfull \hbox (11.50822pt too wide) in paragraph at lines 82--82
 [][] 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 82.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 83.
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 82.
+(Font)              size <10.95> substituted on input line 83.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 82.
+(Font)              size <10.95> substituted on input line 83.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 82.
+(Font)              size <10.95> substituted on input line 83.
 
 [1
 
@@ -1334,7 +1334,7 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
 ] [4
 
 ]
-This exam contains 20 questions with 0 parts, 0 subparts, and 0 subsubparts.
+This exam contains 21 questions with 0 parts, 0 subparts, and 0 subsubparts.
 This exam has a total of 60 points.
 This exam has a total of 0 bonus points.
 (./calculus_with_answer.aux)
@@ -1347,10 +1347,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 33764 strings out of 492483
- 721472 string characters out of 6132858
- 810991 words of memory out of 5000000
- 37741 multiletter control sequences out of 15000+600000
+ 33769 strings out of 492483
+ 721551 string characters out of 6132858
+ 812012 words of memory out of 5000000
+ 37746 multiletter control sequences out of 15000+600000
  544164 words of font info for 144 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  68i,19n,83p,866b,944s stack positions out of 5000i,500n,10000p,200000b,80000s
