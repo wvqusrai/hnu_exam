@@ -35,10 +35,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 中英文字体设置
 % 中文字体设置
-%\setCJKmainfont{SIMSUN.TTC}
-%\newCJKfontfamily[song]\songti{SimSun}
-\setCJKfamilyfont{zhsong}[AutoFakeBold = {2.17}]{SimSun}
-\newcommand*{\songti}{\CJKfamily{zhsong}}
+\setCJKmainfont{SIMSUN.TTC}
+\newCJKfontfamily[song]\songti{SimSun}
 \newCJKfontfamily[hei]\heiti{SimHei}
 % 英文字体设置
 \setmainfont{Times New Roman}
@@ -75,7 +73,7 @@
 % 打印右边学生信息命令
 \newcommand{\databox}{%
   \smash{\makebox[0pt][r]{%
-  	\wuhao\songti\textbf{
+  	\wuhao
     \begin{tabular}[t]{|p{2cm}<{\centering}|}
     \multicolumn{1}{c}{} \\[2in] % lower the box
     \hline
@@ -101,11 +99,11 @@
     \hline
     \end{tabular}\hspace{0.5em} 
     \normalsize
-  }}}%
+  }}%
   \gdef\databox{}%
 }
 
-% 衡阳师范学院试卷开头信息
+% 衡阳师范学院抬头
 \newcommand{\examinformation}[5]{%
 	\begin{center}%
 		{\fontsize{18pt}{2\baselineskip}\selectfont\heiti\bfseries #1\\
@@ -177,7 +175,6 @@
 % 	\end{EnvFullwidth}
 % }
 
-\str_set:Nn \g_tmpa_str{判断题}
 \NewDocumentCommand{\makepart}{ m o m }{
   % 使用举例 \makepart{选择题}[3]{15}
   % #1：题型，如“选择题”
@@ -188,15 +185,12 @@
 	% 由于要在开头展示出每个大题的总分，所以需要将每个大题的总分写出辅助文件，我们采用的方式是先写入到一个“列表”这样的数据结构中。最后在文档结束时，写入辅助文件。
   \__add_to_grades_list:n  { #3 }	% 将参数3的分值加到\g_grades_clist这个列表变量右边去。
   % exam文档类中定义的EnvFullwidth环境
-  \str_set:Nn \g_tmpb_str{#1}
 	\begin{EnvFullwidth}
+	  \vspace{0.05em}%
 		\sihao
-		\renewcommand\arraystretch{1.3}
 		\begin{tabular}{|c|c|c}
 			\cline{1-2}
-			得分 & 评卷人 & \multirow{2}{*}{\heiti\bfseries\zhnum{examSection}、#1(
-			\str_if_eq:NNTF{\g_tmpa_str}{\g_tmpb_str}{正确打\Checkmark，错误打\XSolidBrush,\newline}{}
-			\IfNoValueF {#2} {每小题~#2~分，} 共~#3~分)} \\
+			得分 & 评阅人 & \multirow{2}{*}{\zhnum{examSection}、#1(\IfNoValueF {#2} {每小题~#2~分，} 共~#3~分)} \\
 			\cline{1-2}
 			& & \\
 			\cline{1-2}
@@ -250,49 +244,32 @@
 % 实际输出表格的命令，使用xinittools包来循环
 \NewDocumentCommand{\constructionTable}{}{
 	\fontsize{10.5pt}{1.5\baselineskip}\selectfont %表格内文字字体设置
-	\renewcommand\arraystretch{1}
 	\begin{table}[h]	%表格输入实体部分，可以不用浮动体，用h表示强制要放在抬头部分
 		\centering
-		{\heiti\bfseries\begin{tabular}{|*{\inteval{4+\totvalue{examSection}}}{c|}}
+		\begin{tabular}{|*{\inteval{4+\totvalue{examSection}}}{c|}}
 			\hline
-			题\quad 号 \xintFor* ##1 in {\xintSeq {1}{\totvalue{examSection}}} \do {&\zhnumber{##1}} & 总分 & 合分人 & 复查人\\
+			题号 \xintFor* ##1 in {\xintSeq {1}{\totvalue{examSection}}} \do {&\zhnumber{##1}} & 总分 & 合分人 & 复查人\\
 			\hline
-			分\quad 值 \xintFor ##1 in  \g_grades_aux_clist \do {& ##1} & \total{sumpoints} & \multirow{2}{*}{} & \multirow{2}{*}{} \\
+			总分 \xintFor ##1 in  \g_grades_aux_clist \do {& ##1} & \total{sumpoints} & \multirow{2}{*}{} & \multirow{2}{*}{} \\
 			\cline{1-\inteval{2+\totvalue{examSection}}}
-			得\quad 分  \xintFor* ##1 in {\xintSeq {1}{\inteval{1+\totvalue{examSection}}}} \do{&} &  &\\
+			得分  \xintFor* ##1 in {\xintSeq {1}{\inteval{1+\totvalue{examSection}}}} \do{&} &  &\\
 			\hline
-		\end{tabular}}
+		\end{tabular}
 	\end{table}
 	\normalsize	%恢复默认字体设置
 }
-
-%%% 判断题
-\NewDocumentCommand {\torf} { o }{
-	\IfNoValueTF {#1}
-	{\tfblank}
-	{ 
-		\ifprintanswers
-			\tfans{#1}
-		\else
-			\tfblank
-		\fi
-	}
-}
-\NewDocumentCommand{\tfblank}{}{(\qquad)}
-\NewDocumentCommand{\tfans}{m}{(#1)}
-
 \ExplSyntaxOff
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LaTeX3部分结束
+%	LaTeX3部分结束
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 一个实际的表格的样子
 % \begin{tabular}{|c|c|c|c|c|c|c|c|}
 % 	\hline
-% 	题 号 & 一 & 二 & 三 & 四 & 总分 & 合分人            & 复查人            \\
+% 	题号 & 一 & 二 & 三 & 四 & 总分 & 合分人            & 复查人            \\
 % 	\hline
-% 	分 值 & 15 & 15 & 10 & 60 & 100  & \multirow{2}{*}{} & \multirow{2}{*}{} \\
+% 	总分 & 15 & 15 & 10 & 60 & 100  & \multirow{2}{*}{} & \multirow{2}{*}{} \\
 % 	\cline{1-6}
-% 	得 分 &    &    &    &    &      &                   &                   \\
+% 	得分 &    &    &    &    &      &                   &                   \\
 % 	\hline
 % \end{tabular}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
