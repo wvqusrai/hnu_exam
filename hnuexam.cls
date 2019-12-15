@@ -1,11 +1,12 @@
 \NeedsTeXFormat{LaTeX2e}
 %The command \NeedsTeXFormat{LaTeX2e} sets the LATEX version for the class to work. Additionally, a date can be added within brackets to specify the minimal release date required.
-\ProvidesClass{hnuexam}[2019/10/17 HnuExam Document Class]
+\ProvidesClass{hnuexam}[2019/12/15 HengYang Normal University Exam Document Class]
 %2019/05/27 version 1.1
 %2019/06/15 version 1.2
 %2019/09/29 version 1.3
 %2019/10/7  version 2.0
 %2019/10/17 version 2.1
+%2019/12/15 version 3.0
 %The command ProvidesClass{exampleclass}[...] identifies this class as exampleclass and, inside the brackets, the release date and some additional information is included. The date should be in the form YYYY/MM/DD
 
 \LoadClass{exam}
