@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.23)  15 DEC 2019 16:35
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.23)  15 DEC 2019 16:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,7 +6,8 @@ entering extended mode
 (./calculus_no_answer.tex
 LaTeX2e <2019-10-01> patch level 1
 (./hnuexam.cls
-Document Class: hnuexam 2019/10/17 HnuExam Document Class
+Document Class: hnuexam 2019/12/15 HengYang Normal University Exam Document Cla
+ss
 (c:/texlive/2019/texmf-dist/tex/latex/exam/exam.cls
 Document Class: exam 2017/12/17 Version 2.603 by Philip Hirschhorn
 (c:/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
@@ -1059,7 +1060,7 @@ ext;"
 (fontspec)             Roman/BI/OT:script=latn;language=DFLT;+smcp;mapping=tex-
 text;"
 
-LaTeX Info: Redefining \rmfamily on input line 45.
+LaTeX Info: Redefining \rmfamily on input line 46.
 
 
 Package xeCJK Warning: Unknown CJK family `\CJKrmdefault' is being ignored.
@@ -1098,7 +1099,7 @@ xt;"
 (fontspec)             <->"Arial/BI/OT:script=latn;language=DFLT;+smcp;mapping=
 tex-text;"
 
-LaTeX Info: Redefining \sffamily on input line 47.
+LaTeX Info: Redefining \sffamily on input line 48.
 \c@examSection=\count388
 \c@examSection@totc=\count389
 \c@sumpoints=\count390
@@ -1348,7 +1349,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  33728 strings out of 492483
  719425 string characters out of 6132858
- 810906 words of memory out of 5000000
+ 810930 words of memory out of 5000000
  37706 multiletter control sequences out of 15000+600000
  544011 words of font info for 142 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
