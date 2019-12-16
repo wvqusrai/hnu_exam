@@ -128,10 +128,10 @@
 \newtotcounter{sumpoints}	% 总分计数器
 
 %%%%%%%%%%%%%%%%%%%%%%%%% LaTeX3 部分
-% 开启LaTeX3语法大门
+% 开启LaTeX3语法
 \ExplSyntaxOn
-\clist_new:N \g_grades_clist	%
-\clist_new:N \g_grades_aux_clist	%
+\clist_new:N \g_grades_clist	% 
+\clist_new:N \g_grades_aux_clist	%  
 
 
 %% 开始一个大题的命令
