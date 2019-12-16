@@ -256,7 +256,7 @@
 		\centering
 		{\heiti\bfseries\begin{tabular}{|*{\inteval{4+\totvalue{examSection}}}{c|}}
 			\hline
-			题\quad 号 \xintFor* ##1 in {\xintSeq {1}{\totvalue{examSection}}} \do {&\zhnumber{##1}} & 总分 & 合分人 & 复查人\\
+			题\quad 号 \xintFor* ##1 in {\xintSeq {1}{\totvalue{examSection}}} \do {&\,\zhnumber{##1}\,} & 总分 & 合分人 & 复查人\\
 			\hline
 			分\quad 值 \xintFor ##1 in  \g_grades_aux_clist \do {& ##1} & \total{sumpoints} & \multirow{2}{*}{} & \multirow{2}{*}{} \\
 			\cline{1-\inteval{2+\totvalue{examSection}}}
