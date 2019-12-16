@@ -34,15 +34,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%宏包前言%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 中英文字体设置
+%%%%%%%%%%%%%%%%%%%%%%%%%%%中英文字体设置%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 中文字体设置
-%\setCJKmainfont{SIMSUN.TTC}
-%\newCJKfontfamily[song]\songti{SimSun}
 \setCJKfamilyfont{zhsong}[AutoFakeBold = {2.17}]{SimSun}
+% 以上设置可以实现宋体加粗不了的问题~
 \newcommand*{\songti}{\CJKfamily{zhsong}}
 \newCJKfontfamily[hei]\heiti{SimHei}
 % 英文字体设置
+% 设置英文主字体
 \setmainfont{Times New Roman}
+% 设置英文无衬线字体
 \setsansfont{Arial}
 % 定义默认字体大小和行距
 \renewcommand{\normalsize}{\fontsize{12pt}{\baselineskip}\selectfont}
@@ -70,13 +71,13 @@
 % 设置首行缩进
 \setlength{\parindent}{0em}
 
-% 设置表格放缩
+% 重新设置表格放缩为1.5
 \renewcommand\arraystretch{1.5}
 
 % 打印右边学生信息命令
 \newcommand{\databox}{%
   \smash{\makebox[0pt][r]{%
-  	\wuhao\songti\textbf{
+  	\wuhao\songti\textbf{% 五号宋体加粗
     \begin{tabular}[t]{|p{2cm}<{\centering}|}
     \multicolumn{1}{c}{} \\[2in] % lower the box
     \hline
@@ -123,87 +124,46 @@
 }
 
 % 定义大题、总分计数器并初始化为0
-\newtotcounter{examSection}
-\newtotcounter{sumpoints}
+\newtotcounter{examSection}	% 一共有几个大题的计数器
+\newtotcounter{sumpoints}	% 总分计数器
 
 %%%%%%%%%%%%%%%%%%%%%%%%% LaTeX3 部分
 % 开启LaTeX3语法大门
 \ExplSyntaxOn
-\clist_new:N \g_grades_clist
-\clist_new:N \g_grades_aux_clist
-% 开始一个大题的命令
-%%% 本来想用两个不同的命令，后来还是用同一个命令，然后使用可选参数的方式。
-% \NewDocumentCommand{\makepart}{ m o m }{
-%    	\stepcounter{examSection}
-% 	\addtocounter{sumpoints}{#3}
-% 	 % store both the  score in \g_grades_clist
-% 	\__add_to_grades_list:n  { #3 }
-% 	\begin{EnvFullwidth}
-% 		\vspace{0.05em}%
-% 		\fontsize{14pt}{16.8pt}\selectfont
-% 		\begin{tabular}{|c|c|c}
-% 			\cline{1-2}
-% 			得分 & 评阅人 & \multirow{2}{*}{\zhnum{examSection}、#1(每小题~#2~分，共~#3~分)} \\
-% 			\cline{1-2}
-% 			& & \\
-% 			\cline{1-2}
-% 		\end{tabular}
-% 		\normalsize
-% 		\vspace{0.5em}
-% 	\end{EnvFullwidth}
-% }
+\clist_new:N \g_grades_clist	%
+\clist_new:N \g_grades_aux_clist	%
 
-%%%% \str_new:N \l__hnu_allpoints_str 应该可以不用这个变量也能实现。这里用了。
-% \str_new:N \l__hnu_allpoints_str 
-% \NewDocumentCommand{\makepart}{ m o m }{
-%    	\stepcounter{examSection}
-% 	\addtocounter{sumpoints}{#3}
-% 	 % store the score in \g_grades_clist
-% 	\__add_to_grades_list:n  { #3 }	
 
-% 	\str_clear:N \l__hnu_allpoints_str 
-% 	\IfNoValueF {#2} {\str_set:Nn \l__hnu_allpoints_str { 每小题~#2~分，}}
-% 	\begin{EnvFullwidth}
-% 		\vspace{0.05em}%
-% 		\sihao
-% 		\begin{tabular}{|c|c|c}
-% 			\cline{1-2}
-% 			得分 & 评阅人 & \multirow{2}{*}{\zhnum{examSection}、#1(\str_use:N \l__hnu_allpoints_str 共~#3~分)} \\
-% 			\cline{1-2}
-% 			& & \\
-% 			\cline{1-2}
-% 		\end{tabular}
-% 		\normalsize
-% 		\vspace{0.5em}
-% 	\end{EnvFullwidth}
-% }
-
-\str_set:Nn \g_tmpa_str{判断题}
+%% 开始一个大题的命令
+\str_set:Nn \g_tmpa_str{判断题}	%如果是判断题，添加一些文字描述，打勾或打叉！！
 \NewDocumentCommand{\makepart}{ m o m }{
   % 使用举例 \makepart{选择题}[3]{15}
   % #1：题型，如“选择题”
   % #2：当分值一样时，每小题多少分，是可选参数，使用方括号。如果每小题的分值不同，则这个参数省略。
   % #3：这个大题的总分是多少，显示写出来，没有使用自动计算。 
   \stepcounter{examSection} % 每开始一个大题，将大题计数器加一
-	\addtocounter{sumpoints}{#3}  % 统计总分
+  \addtocounter{sumpoints}{#3}  % 统计总分
 	% 由于要在开头展示出每个大题的总分，所以需要将每个大题的总分写出辅助文件，我们采用的方式是先写入到一个“列表”这样的数据结构中。最后在文档结束时，写入辅助文件。
   \__add_to_grades_list:n  { #3 }	% 将参数3的分值加到\g_grades_clist这个列表变量右边去。
   % exam文档类中定义的EnvFullwidth环境
-  \str_set:Nn \g_tmpb_str{#1}
+  \str_set:Nn \g_tmpb_str{#1}	% 将大题的题型置入LaTeX3系统自带的临时变量里。
+  
+  %%%%%%%%%%%%%%%%% 以上是前期准备
+  %%%%%%%%%%%%%%%%% 以下是正式输出大题题头：
 	\begin{EnvFullwidth}
-		\sihao
-		\renewcommand\arraystretch{1.3}
+		\sihao	% 四号字体
+		\renewcommand\arraystretch{1.3} % 表格缩放1.3倍
 		\begin{tabular}{|c|c|c}
 			\cline{1-2}
 			得分 & 评卷人 & \multirow{2}{*}{\heiti\bfseries\zhnum{examSection}、#1(
-			\str_if_eq:NNTF{\g_tmpa_str}{\g_tmpb_str}{正确打\Checkmark，错误打\XSolidBrush,\newline}{}
-			\IfNoValueF {#2} {每小题~#2~分，} 共~#3~分)} \\
+			\str_if_eq:NNTF{\g_tmpa_str}{\g_tmpb_str}{正确打\Checkmark，错误打\XSolidBrush,\newline}{}	% 通过判定是不是判断题来决定是不是多输出一些文字。
+			\IfNoValueF {#2} {每小题~#2~分，} 共~#3~分)} \\% 判断是否每个题分值一样，通过看是否有可选参数来实现~
 			\cline{1-2}
 			& & \\
 			\cline{1-2}
 		\end{tabular}
-		\normalsize
-		\vspace{0.5em}
+		\normalsize	% 将字体变成默认的
+		\vspace{0.5em}	% 下面留白一点点
 	\end{EnvFullwidth}
 }% \makepart{}[]{}命令结束
 
@@ -267,23 +227,6 @@
 	\normalsize	%恢复默认字体设置
 }
 
-%%% 判断题
-\NewDocumentCommand {\torf} { o }{
-	\IfNoValueTF {#1}
-	{\tfblank}
-	{ 
-		\ifprintanswers
-			\tfans{#1}
-		\else
-			\tfblank
-		\fi
-	}
-}
-\NewDocumentCommand{\tfblank}{}{(\qquad)}
-\NewDocumentCommand{\tfans}{m}{(#1)}
-
-\ExplSyntaxOff
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LaTeX3部分结束
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 一个实际的表格的样子
@@ -298,6 +241,24 @@
 % \end{tabular}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%% 判断题（按是不是设置了答案选项来执行）
+\NewDocumentCommand {\torf} { o }{
+	\IfNoValueTF {#1}
+	{\tfblank}
+	{ 
+		\ifprintanswers
+			\tfans{#1}
+		\else
+			\tfblank
+		\fi
+	}
+}
+\NewDocumentCommand{\tfblank}{}{(\qquad)}	%正式试卷的判断题输出
+\NewDocumentCommand{\tfans}{m}{(#1)}	%参考答案的判断题输出	
+
+\ExplSyntaxOff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LaTeX3部分结束
 
 % 表，分，页等中文个性化输出
 \renewcommand{\tablename}{表}
@@ -322,7 +283,7 @@
 % 显示分数
 \newcommand{\myscore}[1]{\textcolor{blue}{#1\kern0.2em \text{分}}}
 
-% 判断题的答案输出
+% 判断题的答案输出（exam包自带的方式，以修改为上面的。）
 \newcommand{\tf}[1][{}]{%
 \fillin[#1][0.25in]%
 }
@@ -330,6 +291,7 @@
 \renewcommand{\thepartno}{\Roman{partno}}
 
 % 输出左边学生需要填写信息的表格
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 学生考前需要填写的信息输出
 \lhead{\databox}
 
 % 定义输出大小写罗马数字的命令

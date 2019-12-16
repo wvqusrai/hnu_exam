@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.23)  16 DEC 2019 11:30
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.23)  16 DEC 2019 11:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1060,7 +1060,7 @@ ext;"
 (fontspec)             Roman/BI/OT:script=latn;language=DFLT;+smcp;mapping=tex-
 text;"
 
-LaTeX Info: Redefining \rmfamily on input line 46.
+LaTeX Info: Redefining \rmfamily on input line 47.
 
 
 Package xeCJK Warning: Unknown CJK family `\CJKrmdefault' is being ignored.
@@ -1099,7 +1099,7 @@ xt;"
 (fontspec)             <->"Arial/BI/OT:script=latn;language=DFLT;+smcp;mapping=
 tex-text;"
 
-LaTeX Info: Redefining \sffamily on input line 48.
+LaTeX Info: Redefining \sffamily on input line 49.
 \c@examSection=\count388
 \c@examSection@totc=\count389
 \c@sumpoints=\count390
@@ -1349,7 +1349,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  33769 strings out of 492483
  721551 string characters out of 6132858
- 812012 words of memory out of 5000000
+ 812013 words of memory out of 5000000
  37746 multiletter control sequences out of 15000+600000
  544164 words of font info for 144 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
