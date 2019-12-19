@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.23)  19 DEC 2019 14:28
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.23)  19 DEC 2019 14:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1169,7 +1169,19 @@ LaTeX Warning: Label `question@4' multiply defined.
 LaTeX Warning: Label `question@5' multiply defined.
 
 
-LaTeX Warning: Label `question@6' multiply defined.
+LaTeX Warning: Label `question@1' multiply defined.
+
+
+LaTeX Warning: Label `question@2' multiply defined.
+
+
+LaTeX Warning: Label `question@3' multiply defined.
+
+
+LaTeX Warning: Label `question@4' multiply defined.
+
+
+LaTeX Warning: Label `question@5' multiply defined.
 
 )
 \openout1 = `"calculus_no_answer - not countinous labeled.aux"'.
@@ -1334,32 +1346,32 @@ LaTeX Font Warning: Font shape `TU/SimHei(0)/bx/n' undefined
 (Font)              using `TU/SimHei(0)/m/n' instead on input line 15.
 
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 22.
-LaTeX Font Info:    Trying to load font information for U+ding on input line 84
+LaTeX Font Info:    Trying to load font information for U+ding on input line 86
 .
 (c:/texlive/2019/texmf-dist/tex/latex/bbding/Uding.fd
 File: Uding.fd 1996/02/01 v1.0 BBding font definitions
 )
 
 LaTeX Font Warning: Font shape `U/ding/bx/n' undefined
-(Font)              using `U/ding/m/n' instead on input line 84.
+(Font)              using `U/ding/m/n' instead on input line 86.
 
 
-Overfull \hbox (11.50822pt too wide) in paragraph at lines 84--84
+Overfull \hbox (11.50822pt too wide) in paragraph at lines 86--86
 [][] 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 85.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 87.
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 85.
+(Font)              size <10.95> substituted on input line 87.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 85.
+(Font)              size <10.95> substituted on input line 87.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 85.
+(Font)              size <10.95> substituted on input line 87.
 
 [1
 
@@ -1388,10 +1400,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 33678 strings out of 492483
- 718885 string characters out of 6132858
- 810807 words of memory out of 5000000
- 37656 multiletter control sequences out of 15000+600000
+ 33658 strings out of 492483
+ 718582 string characters out of 6132858
+ 810726 words of memory out of 5000000
+ 37636 multiletter control sequences out of 15000+600000
  544011 words of font info for 142 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  68i,19n,83p,862b,945s stack positions out of 5000i,500n,10000p,200000b,80000s
