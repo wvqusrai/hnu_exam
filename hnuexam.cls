@@ -1,4 +1,4 @@
-\NeedsTeXFormat{LaTeX2e}
+﻿\NeedsTeXFormat{LaTeX2e}
 %The command \NeedsTeXFormat{LaTeX2e} sets the LATEX version for the class to work. Additionally, a date can be added within brackets to specify the minimal release date required.
 \ProvidesClass{hnuexam}[2019/12/15 HengYang Normal University Exam Document Class]
 %2019/05/27 version 1.1
@@ -19,7 +19,7 @@
 \RequirePackage{expl3,xparse}	%LaTeX3
 \RequirePackage{etoolbox,xinttools,xfp,totcount} %一些有用的宏包
 \RequirePackage{multirow,tabu,diagbox} %表格包，表格多行合并包
-\RequirePackage{bbding}	%对错符号包
+\RequirePackage{bbding,pifont}	%对错符号包
 \RequirePackage{siunitx} % 国际单位制宏包（典型的一个LaTeX3实现的宏包）
 %\RequirePackage is very similar to the well-known \usepackage
 
@@ -141,6 +141,7 @@
   % #1：题型，如“选择题”
   % #2：当分值一样时，每小题多少分，是可选参数，使用方括号。如果每小题的分值不同，则这个参数省略。
   % #3：这个大题的总分是多少，显示写出来，没有使用自动计算。 
+  \setcounter{question}{0}
   \stepcounter{examSection} % 每开始一个大题，将大题计数器加一
   \addtocounter{sumpoints}{#3}  % 统计总分
 	% 由于要在开头展示出每个大题的总分，所以需要将每个大题的总分写出辅助文件，我们采用的方式是先写入到一个“列表”这样的数据结构中。最后在文档结束时，写入辅助文件。
@@ -156,7 +157,7 @@
 		\begin{tabular}{|c|c|c}
 			\cline{1-2}
 			得分 & 评卷人 & \multirow{2}{*}{\heiti\bfseries\zhnum{examSection}、#1(
-			\str_if_eq:NNTF{\g_tmpa_str}{\g_tmpb_str}{正确打\Checkmark，错误打\XSolidBrush,\newline}{}	% 通过判定是不是判断题来决定是不是多输出一些文字。
+			\str_if_eq:NNTF{\g_tmpa_str}{\g_tmpb_str}{正确打\cmark，错误打\xmark,\newline}{}	% 通过判定是不是判断题来决定是不是多输出一些文字。
 			\IfNoValueF {#2} {每小题~#2~分，} 共~#3~分)} \\% 判断是否每个题分值一样，通过看是否有可选参数来实现~
 			\cline{1-2}
 			& & \\
@@ -297,3 +298,7 @@
 % 定义输出大小写罗马数字的命令
 \newcommand{\rmnum}[1]{\romannumeral #1}
 \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+
+% 重定义勾叉符号
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%

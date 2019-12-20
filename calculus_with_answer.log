@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.23)  16 DEC 2019 11:50
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.10.23)  20 DEC 2019 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -982,6 +982,20 @@ Package: fp-eval 1995/04/03
 (c:/texlive/2019/texmf-dist/tex/latex/bbding/bbding.sty
 Package: bbding 1999/04/15 v1.01 Dingbats symbols
 )
+(c:/texlive/2019/texmf-dist/tex/latex/psnfss/pifont.sty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+
+
+(c:/texlive/2019/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+
+
+(c:/texlive/2019/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
 (c:/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2019/10/10 v2.7t A comprehensive (SI) units package
 \l__siunitx_tmp_box=\box71
@@ -1137,7 +1151,53 @@ Package fontspec Info: Font family 'SimSun(0)' created for font 'SimSun' with
 (fontspec)             <->"SimSun/OT:script=hani;language=DFLT;embolden=2.17;"
 (fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.: 
 
-(./calculus_with_answer.aux)
+(./calculus_with_answer.aux
+
+LaTeX Warning: Label `question@1' multiply defined.
+
+
+LaTeX Warning: Label `question@2' multiply defined.
+
+
+LaTeX Warning: Label `question@3' multiply defined.
+
+
+LaTeX Warning: Label `question@4' multiply defined.
+
+
+LaTeX Warning: Label `question@5' multiply defined.
+
+
+LaTeX Warning: Label `question@1' multiply defined.
+
+
+LaTeX Warning: Label `question@2' multiply defined.
+
+
+LaTeX Warning: Label `question@3' multiply defined.
+
+
+LaTeX Warning: Label `question@4' multiply defined.
+
+
+LaTeX Warning: Label `question@5' multiply defined.
+
+
+LaTeX Warning: Label `question@1' multiply defined.
+
+
+LaTeX Warning: Label `question@2' multiply defined.
+
+
+LaTeX Warning: Label `question@3' multiply defined.
+
+
+LaTeX Warning: Label `question@4' multiply defined.
+
+
+LaTeX Warning: Label `question@5' multiply defined.
+
+)
 \openout1 = `calculus_with_answer.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -1300,17 +1360,8 @@ LaTeX Font Warning: Font shape `TU/SimHei(0)/bx/n' undefined
 (Font)              using `TU/SimHei(0)/m/n' instead on input line 15.
 
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 22.
-LaTeX Font Info:    Trying to load font information for U+ding on input line 82
-.
-(c:/texlive/2019/texmf-dist/tex/latex/bbding/Uding.fd
-File: Uding.fd 1996/02/01 v1.0 BBding font definitions
-)
 
-LaTeX Font Warning: Font shape `U/ding/bx/n' undefined
-(Font)              using `U/ding/m/n' instead on input line 82.
-
-
-Overfull \hbox (11.50822pt too wide) in paragraph at lines 82--82
+Overfull \hbox (2.0705pt too wide) in paragraph at lines 82--82
 [][] 
  []
 
@@ -1337,6 +1388,10 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
 This exam contains 21 questions with 0 parts, 0 subparts, and 0 subsubparts.
 This exam has a total of 60 points.
 This exam has a total of 0 bonus points.
+
+Class exam Warning: Point totals have changed. Rerun to get point totals right.
+
+
 (./calculus_with_answer.aux)
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1345,14 +1400,17 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 33769 strings out of 492483
- 721551 string characters out of 6132858
- 812013 words of memory out of 5000000
- 37746 multiletter control sequences out of 15000+600000
- 544164 words of font info for 144 fonts, out of 8000000 for 9000
+ 33729 strings out of 492483
+ 720874 string characters out of 6132858
+ 812386 words of memory out of 5000000
+ 37699 multiletter control sequences out of 15000+600000
+ 545284 words of font info for 146 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 68i,19n,83p,866b,944s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,19n,83p,866b,945s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on calculus_with_answer.pdf (4 pages).
