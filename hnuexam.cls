@@ -11,6 +11,7 @@
 
 \LoadClass{exam}
 \RequirePackage{amsmath,amssymb,amsthm}	%美国数学学会系列
+\RequirePackage{mathtools}	%amsmath增强包
 \RequirePackage{tikz}	%tikz用于画图包
 \RequirePackage{xeCJK,zhnumber} %支持中文，中文数字包
 \RequirePackage{geometry}	%设置页边距等
@@ -302,3 +303,10 @@
 % 重定义勾叉符号
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
+
+% 选择题右对齐的括号
+\newcommand{\chblank}{\hfill $(\qquad)$}
+
+% 答案显示相关
+\shadedsolutions %设置答案显示在阴影区域
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1} % 设置阴影的颜色
