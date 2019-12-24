@@ -158,7 +158,7 @@
 		\begin{tabular}{|c|c|c}
 			\cline{1-2}
 			得分 & 评卷人 & \multirow{2}{*}{\heiti\bfseries\zhnum{examSection}、#1(
-			\str_if_eq:NNTF{\g_tmpa_str}{\g_tmpb_str}{正确打\cmark，错误打\xmark，\newline}{}% 通过判定是不是判断题来决定是不是多输出一些文字。
+			\str_if_eq:NNTF{\g_tmpa_str}{\g_tmpb_str}{正确打\cmark，错误打\xmark，}{}% 通过判定是不是判断题来决定是不是多输出一些文字。
 			\IfNoValueF {#2} {每小题~#2~分，} 共~#3~分)} \\% 判断是否每个题分值一样，通过看是否有可选参数来实现~
 			\cline{1-2}
 			& & \\
