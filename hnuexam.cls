@@ -76,7 +76,7 @@
 \renewcommand\arraystretch{1.5}
 
 % 打印右边学生信息命令
-\newcommand{\databox}{%
+\newcommand{\studentTable}{%
   \smash{\makebox[0pt][r]{%
   	\wuhao\songti\textbf{% 五号宋体加粗
     \begin{tabular}[t]{|p{2cm}<{\centering}|}
@@ -105,8 +105,42 @@
     \end{tabular}\hspace{0.5em} 
     \normalsize
   }}}%
-  \gdef\databox{}%
+  \gdef\studentTable{}%
 }
+
+% 打印右边学生信息命令
+\newcommand{\NstudentTable}{%
+  \smash{\makebox[0pt][r]{%
+  	\wuhao\songti\textbf{% 五号宋体加粗
+    \begin{tabular}[t]{|p{2cm}<{\centering}|}
+    \multicolumn{1}{c}{} \\[2in] % lower the box
+    \hline
+    系\hfil 别\\
+    \hline
+    \\[2\normalbaselineskip]
+    \hline
+    专\hfil 业\\
+    \hline
+    \\[2\normalbaselineskip]
+    \hline
+    班\hfil 级\\
+    \hline
+    \\[2\normalbaselineskip]
+    \hline
+    学\hfil 号\\
+    \hline
+    \\[2\normalbaselineskip]
+    \hline
+    姓\hfil 名\\
+    \hline
+    \\[2\normalbaselineskip]
+    \hline
+    \end{tabular}\hspace{0.5em} 
+    \normalsize
+  }}}%
+  \gdef\NstudentTable{}%
+}
+
 
 % 衡阳师范学院试卷开头信息
 \newcommand{\examinformation}[5]{%
@@ -292,10 +326,6 @@
 % 大题的小问的标号以罗马字母标号
 \renewcommand{\thepartno}{\Roman{partno}}
 
-% 输出左边学生需要填写信息的表格
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 学生考前需要填写的信息输出
-\lhead{\databox}
-
 % 定义输出大小写罗马数字的命令
 \newcommand{\rmnum}[1]{\romannumeral #1}
 \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
@@ -318,3 +348,4 @@
 \ifblank{#1}{\:\cdot\:}{#1}
 }
 \DeclarePairedDelimiterX\innerp[2]{\langle}{\rangle}{#1,#2}
+\DeclareMathOperator{\Pro}{Pro}
