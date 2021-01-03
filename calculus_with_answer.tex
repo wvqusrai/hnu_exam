@@ -1,12 +1,8 @@
-\documentclass[addtable,answer,twoside,12pt]{hnuexam}
-% 以下几个命令是exam包中的标准命令
-% 如果不需要横线，直接将下面两行注释或删除即可
-\shadedsolutions %设置答案显示在阴影区域
-\definecolor{SolutionColor}{rgb}{0.8,0.9,1} % 设置阴影的颜色
-%\framedsolutions %设置答案被一个框框起来
-%\unframedsolutions %取消答案的框框命令
+\documentclass[addtable,answer,tbtags,twoside,12pt]{hnuexam}
 
 \begin{document}
+\studentTable
+	
 \examinformation%
 {衡阳师范学院2018-2019 学年第二学期}%
 {化学与材料科学学院化学专业2020级}%
@@ -21,7 +17,7 @@
 \begin{questions}
 \makepart{单选题}[3]{15}
 \question
-\num{.3e45}\si{\newton} = \hfill $(\qquad)$
+\num{.3e45}\si{\newton} = \chblank
 
 \begin{oneparchoices}
 	\choice \num{.3e45}
@@ -31,17 +27,7 @@
 \end{oneparchoices}
 
 \question
-求初值问题$y^\prime=y,y(0)=1$的特解为$y=$\hfill $(\qquad)$
-	
-\begin{oneparchoices}
-	\choice $e^x+1$
-	\choice	$\frac{1}{2}x^2+1$
-	\choice $x^2+C,\text{其中}C$为任意常数
-	\CorrectChoice $e^x$
-\end{oneparchoices}
-
-\question
-求初值问题$y^\prime=y,y(0)=1$的特解为$y=$\hfill $(\qquad)$
+求初值问题$y^\prime=y,y(0)=1$的特解为$y=$\chblank
 
 \begin{oneparchoices}
 	\choice $e^x+1$
@@ -50,9 +36,8 @@
 	\CorrectChoice $e^x$
 \end{oneparchoices}
 
-
 \question
-求初值问题$y^\prime=y,y(0)=1$的特解为$y=$\hfill $(\qquad)$
+求初值问题$y^\prime=y,y(0)=1$的特解为$y=$\chblank
 
 \begin{oneparchoices}
 	\choice $e^x+1$
@@ -63,7 +48,18 @@
 
 
 \question
-求初值问题$y^\prime=y,y(0)=1$的特解为$y=$\hfill $(\qquad)$
+求初值问题$y^\prime=y,y(0)=1$的特解为$y=$\chblank
+
+\begin{oneparchoices}
+	\choice $e^x+1$
+	\choice	$\frac{1}{2}x^2+1$
+	\choice $x^2+C,\text{其中}C$为任意常数
+	\CorrectChoice $e^x$
+\end{oneparchoices}
+
+
+\question
+求初值问题$y^\prime=y,y(0)=1$的特解为$y=$\chblank
 	
 \begin{oneparchoices}
 	\choice $e^x+1$
@@ -154,7 +150,7 @@
 \begin{solution}
 注：此题也可以不使用乘数法。小题可以看几何意义，大题可以用三角函数代换。另外也可以使用从限制条件中解出$y$代入$f$来解无条件极值。
 
-设$L(x,y,\lambda)=f(x,y)-\lambda [g(x,y)-1]$由
+设$L(x,y,\lambda)=f(x,y)-\lambda \left(g(x,y)-1\right)$由
 $\begin{cases}
 	\frac{\partial L}{\partial x}=1-2\lambda x=0 \\
 	\frac{\partial L}{\partial x}=1-2\lambda y=0 \\

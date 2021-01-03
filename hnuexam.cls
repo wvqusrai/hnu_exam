@@ -29,6 +29,7 @@
 %The command \DeclareOption{}{} handles a given option. It takes two parameters, the first one is the name of the option and the second one is the code to execute if the option is passed.
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 %\PassOptionsToClass{}{}. Passes the option inside the first pair of braces to the document class set inside the second pair of braces. 
+\PassOptionsToPackage{tbtags}{amsmath}
 
 \ProcessOptions\relax
 %The command \ProcessOptions\relax executes the code fore each option and must be inserted after all the option-handling commands were typed. There's a starred version of this command that will execute the options in the exact order specified by the calling commands.
@@ -208,6 +209,7 @@
   \clist_gput_right:Nx \g_grades_clist { #1 }	
   % 第四大题时会产生这样的效果(15,15,10)->(15,15,10,60)
 }
+
 % 按题型打印表格（目前的实现方式是一定要有表格，可以修改为不一定要有表格）
 \NewDocumentCommand{\sectiongradetable}{}{
     \if@addpoints
@@ -303,6 +305,8 @@
 \cfoot{第\thepage~页~,~共\numpages~页}
 \renewcommand{\solutiontitle}{\noindent\textbf{解:}\noindent}
 
+
+
 % 评分标准，按是不是数学环境输出
 \newrobustcmd{\score}[1]{%
   \ifbool{mmode}{%
@@ -339,7 +343,8 @@
 
 % 答案显示相关
 \shadedsolutions %设置答案显示在阴影区域
-\definecolor{SolutionColor}{rgb}{0.8,0.9,1} % 设置阴影的颜色
+%\definecolor{SolutionColor}{rgb}{0.8,0.9,1} % 设置阴影的颜色
+\definecolor{SolutionBoxColor}{gray}{0.8}
 
 % |v|,绝对值 ，范数等符号（利用mathtools宏包构造）
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
