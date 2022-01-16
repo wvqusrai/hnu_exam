@@ -10,6 +10,8 @@
 - 左边表格学生信息部分参考自我问的问题（别人给出的解答）： https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page
 - (2019/10/7) 将抬头的**表格自动生成**，采用`LaTeX3`方式。主要借鉴于下面链接的实现方式
   - https://tex.stackexchange.com/questions/495534/custom-points-table-for-exam/495723#495723
+- (2021/06/27)将表格中的阿拉伯数字替换成中文的，见bilibili我写的专栏:https://www.bilibili.com/read/cv11897540?spm_id_from=333.999.0.0
+  - 学生信息变成了侧面密封线的形式。
 ## 模板情况说明
 - 提供连续题序标号和不连续题序标号两种模板(连续题序类似高考题的题序标号)(其中not countinous labeled.tex文件为非连续编号的).
 - 16开的纸张，具体是长270mm,宽195mm的16开纸。两张16开的纸合成一张大的8开的纸。双栏单面，分左右页边距。
