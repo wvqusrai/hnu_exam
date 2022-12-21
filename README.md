@@ -38,6 +38,7 @@
 
 ### 其它
 - exam文档类最后更新是2017年，但事实上，作者的个人主页上有2019年暑假的beta版。http://www-math.mit.edu/~psh/exam/betatest/exam.cls
+- 该文档类后面有2021年版的了,网址不变.
 
 #### Note
 - The .cls file is for Hengyang Normal University exam template.
