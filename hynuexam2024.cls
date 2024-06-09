@@ -25,6 +25,7 @@
 \RequirePackage{ctex}	%支持中文, 英文环境的公式不变
 \RequirePackage{zhlineskip}  %恢复公式行距
 \RestoreTextEnvironmentLeading{tabular} %表格也设置恢复成西文的方式
+\RestoreTextEnvironmentLeading{tabu}
 \RequirePackage{zhnumber} %中文数字包
 \RequirePackage{geometry}	%设置页边距等
 \RequirePackage{indentfirst}	%设置首段缩进
