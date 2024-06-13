@@ -25,7 +25,7 @@
 \RequirePackage{ctex}	%支持中文, 英文环境的公式不变
 \RequirePackage{zhlineskip}  %恢复公式行距
 \RestoreTextEnvironmentLeading{tabular} %表格也设置恢复成西文的方式
-\RestoreTextEnvironmentLeading{tabu}
+\RestoreTextEnvironmentLeading{tabu} 
 \RequirePackage{zhnumber} %中文数字包
 \RequirePackage{geometry}	%设置页边距等
 \RequirePackage{indentfirst}	%设置首段缩进
@@ -353,29 +353,27 @@
 \AtEndDocument{
 	\iow_now:cx { @auxout } {	%LaTeX3的读写文件的函数
 		\token_to_str:N \SetCourseGradeList { \g_coursegrades_clist  } ^^J
-		%\token_to_str:N \SetGradeList { \g_grades_clist  } ^^J
+		\token_to_str:N \SetGradeList { \g_grades_clist  } ^^J
 		% ^^J表示一个回车。
 	}
 }
 
 % 实际输出表格的命令，使用xinittools包来循环
 \NewDocumentCommand{\constructionTable}{}{
-	\fontsize{10.5pt}{1.5\baselineskip}\selectfont %表格内文字字体设置
-	\renewcommand\arraystretch{1.5}
 	\begin{table}[h]	%表格输入实体部分，可以不用浮动体，用h表示强制要放在抬头部分
 		\centering
-		{\heiti\bfseries\begin{tabular}{|*{\inteval{2+\totvalue{examSection}}}{p{1.5cm}<{\centering}|}}
-				\hline
-				题\quad 号 \xintFor* ##1 in {\xintSeq {1}{\totvalue{examSection}}} \do {&\,\zhnumber{##1}\,} & 总分\\
-				\hline
-				分\quad 值 \xintFor ##1 in  \g_grades_aux_clist \do {& ##1} & \total{sumpoints}\\
-				\cline{1-\inteval{2+\totvalue{examSection}}}
-				得\quad 分  \xintFor* ##1 in {\xintSeq {1}{\inteval{1+\totvalue{examSection}}}} \do{&}\\
-				\hline
+		{\heiti\bfseries\xiaowuhao	%表格内文字字体设置
+		\begin{tabular}{|*{\inteval{2+\totvalue{examSection}}}{p{1.5cm}<{\centering}|}}
+			\hline
+			题\quad 号 \xintFor* ##1 in {\xintSeq {1}{\totvalue{examSection}}} \do {&\,\zhnumber{##1}\,} & 总分\\
+			\hline
+			分\quad 值 \xintFor ##1 in  \g_grades_aux_clist \do {& ##1} & \total{sumpoints}\\
+			\cline{1-\inteval{2+\totvalue{examSection}}}
+			得\quad 分  \xintFor* ##1 in {\xintSeq {1}{\inteval{1+\totvalue{examSection}}}} \do{&}\\
+			\hline
 		\end{tabular}}
 	\end{table}
-	\normalsize	%恢复默认字体设置
-	\renewcommand\arraystretch{1}
+	%\renewcommand\arraystretch{1.2}
 }
 
 
