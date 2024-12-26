@@ -14,6 +14,7 @@
   - 学生信息变成了侧面密封线的形式。
 - (2024/06/09) ctex改变英文公式行间距的问题参考 https://github.com/CTeX-org/ctex-kit/issues/549
   - 矩阵大小放缩倍数可以设置，参考来源：https://texblog.net/latex-archive/maths/amsmath-matrix/
+  - 2024年高考试卷参考来源：https://www.latexstudio.net/index/details/index/mid/4068.html
 ## 模板情况说明
 - 提供连续题序标号和不连续题序标号两种模板(连续题序类似高考题的题序标号)(其中not countinous labeled.tex文件为非连续编号的).
 - 使用A4纸，左右页边距按模板设置了.
