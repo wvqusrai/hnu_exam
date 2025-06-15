@@ -7,7 +7,7 @@
     - 具体使用方法请查看exam文档类，Windows下运行命令```texdoc exam```，或者查阅上面的ctan，或者网上的中英文资料，**如：https://blog.csdn.net/xovee/article/details/90599346**
     - 答案的显示方式可以参考上面的方法，在含答案的版本，导言区里有设置一些参数。
 - 评分标准部分参考自jnuexam. https://ctan.org/pkg/jnuexam
-- 左边表格学生信息部分参考自我问的问题（别人给出的解答）： https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page
+- 左边表格学生信息部分参考自我问的问题（别人给出的解答）： https://tex.stackexchange.com/questions/492568/how-could-i-print-the-table-on-the-left-of-the-page ; 后来我又换了一个方式，感觉效果还不错，用的是边注的形式。不过也有点问题。
 - (2019/10/7) 将抬头的**表格自动生成**，采用`LaTeX3`方式。主要借鉴于下面链接的实现方式
   - https://tex.stackexchange.com/questions/495534/custom-points-table-for-exam/495723#495723
 - (2021/06/27)将表格中的阿拉伯数字替换成中文的，见bilibili我写的专栏:https://www.bilibili.com/read/cv11897540?spm_id_from=333.999.0.0
